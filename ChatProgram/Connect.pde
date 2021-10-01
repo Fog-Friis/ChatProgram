@@ -1,5 +1,5 @@
 import java.sql.*;
-import ControlP5.*;
+import controlP5.*;
 
 String DB_URL = "jdbc:mysql://localhost/chat_program";
 String USER = "root";
