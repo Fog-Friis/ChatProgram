@@ -16,9 +16,14 @@ void draw() {
 }
 
 void mousePressed() {
- 
- if (gameState == 0) { //Hvis knappen ikke kan ses eksistere den ikke
+ switch(gameState) {
+
+    case 0:
   But1.mainMenuB();
+  break;
+  
+  default:
+  break;
   }
   
 }
