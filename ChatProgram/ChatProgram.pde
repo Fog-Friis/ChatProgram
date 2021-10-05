@@ -4,8 +4,9 @@ void setup() {
   gamestateManager = new GameStateManager();
   
   fullScreen();
+}
+void update() {
   
-    
 }
 
 void draw() {
@@ -14,6 +15,10 @@ void draw() {
   gamestateManager.manage();
 }
 
-void keyPressed(){
-  gameState += 1;
+void mousePressed() {
+ 
+ if (gameState == 0) { //Hvis knappen ikke kan ses eksistere den ikke
+  But1.mainMenuB();
+  }
+  
 }
