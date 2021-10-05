@@ -1,3 +1,6 @@
+boolean altgr = false;
+boolean two = false;
+
 public class TextBox {
 
   PVector position, size;
@@ -68,9 +71,17 @@ public class TextBox {
         boolean isKeyCapitalLetter = (KEY >= 'A' && KEY <= 'Z');
         boolean isKeySmallLetter = (KEY >= 'a' && KEY <= 'z');
         boolean isKeyNumber = (KEY >= '0' && KEY <= '9');
-
+        
+        
+        
         if (isKeyCapitalLetter || isKeySmallLetter || isKeyNumber) {
-          addText(KEY);
+          addText(KEY); 
+         
+        
+        }
+        if (altgr == true && two == true){
+         addText('@');
+
         }
       }
     }

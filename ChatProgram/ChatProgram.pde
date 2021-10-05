@@ -37,10 +37,18 @@ void mousePressed() {
 }
 
 void keyPressed() {
-  
+    
+    if (keyCode == 50){two = true;}
+    if (keyCode == 18){altgr = true;}
      for (TextBox t : textBoxes) {
       if (t.keyWasTyped(key, (int)keyCode)) {
       }
    }
+   
   
+}
+void keyReleased() {
+
+      if (keyCode == 50){two = false;}
+    if (keyCode == 18){altgr = false;}
 }
