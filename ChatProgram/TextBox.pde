@@ -1,9 +1,7 @@
 public class TextBox {
 
   PVector position, size;
-  
-  //public int X = 0, Y = 0, H = 35, W = 200;
-  public int TEXTSIZE = 24;
+  public int TEXTSIZE = 48;
 
   // COLORS
   public color Background = color(140, 140, 140);
@@ -29,6 +27,7 @@ public class TextBox {
   }
 
   void display() {
+    
     // DRAWING THE BACKGROUND
     if (selected) {
       fill(BackgroundSelected);
@@ -42,18 +41,20 @@ public class TextBox {
     } else {
       noStroke();
     }
+    
+    rectMode(CORNER);
 
     rect(position.x, position.y, size.x, size.y);
 
     // DRAWING THE TEXT ITSELF
     fill(Foreground);
     textSize(TEXTSIZE);
-    text(Text, X + (textWidth("a") / 2), Y + TEXTSIZE);
+    text(Text, position.x + (textWidth("a") / 2), position.y + TEXTSIZE);
   }
 
   // IF THE KEYCODE IS ENTER RETURN 1
   // ELSE RETURN 0
-  boolean keywasTyped(char KEY, int KEYCODE) {
+  boolean keyWasTyped(char KEY, int KEYCODE) {
     if (selected) {
       if (KEYCODE == (int)BACKSPACE) {
         backSpace();
@@ -95,8 +96,8 @@ public class TextBox {
   // FUNCTION FOR TESTING IS THE POINT
   // OVER THE TEXTBOX
   private boolean overBox(int x, int y) {
-    if (x >= X && x <= X + size.x) {
-      if (y >= Y && y <= Y + size.y) {
+    if (x >= position.x && x <= position.x + size.x) {
+      if (y >= position.y && y <= position.y + size.y) {
         return true;
       }
     }
