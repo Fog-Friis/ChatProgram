@@ -23,7 +23,13 @@ class Button {
     rectMode(CORNER);
     fill(col);
     strokeWeight(3);
-    rect(pos.x-sizebutton/1.4, pos.y-sizebutton/7, sizebutton, sizebutton/3);
+    float rect1 = pos.x-sizebutton/1.4;
+    float rect2 = pos.y-sizebutton/7;
+    float rect3 = sizebutton;
+    float rect4 = sizebutton/3;
+    
+    //rect(pos.x-sizebutton/1.4, pos.y-sizebutton/7, sizebutton, sizebutton/3);
+    rect(rect1, rect2, rect3, rect4);
     fill(0);
     float fontSize = sizebutton * 0.20;
     textSize(fontSize);
@@ -36,7 +42,8 @@ class Button {
 
     if  (mouseX>width/1.88-sizebutton/1.4 && mouseX<width/1.5+sizebutton-sizebutton/1.4 &&    
       mouseY>height/1.88-sizebutton/7 && mouseY<(height/1.5+sizebutton/3)-sizebutton/7) {   //Ændre hvad height er divideret for fremtide knapper
-      gameState += 1;
+      gameState = 3;
+     // exit();
     }
     
 }
