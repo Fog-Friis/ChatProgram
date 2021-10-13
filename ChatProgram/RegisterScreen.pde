@@ -41,8 +41,7 @@ void registerScreen() {
   text("Confirm Password:", width / 2 - width/1920*200, height / 1080 * 690);
 
   textMode(CORNER);
-<<<<<<< Updated upstream
-=======
+
 
   userTB.display();
   emailTB.display();
@@ -60,5 +59,4 @@ void registerScreen() {
 //  }
 
   //println(textBoxes.size());
->>>>>>> Stashed changes
 }
