@@ -34,6 +34,8 @@ void loginScreen() {
   text("Login", width/2, height/2);
 
 
-  But1 = new Button(width/1.88, height/1.5, 100, "Login", color(100, 100, 100));
+  But1 = new Button(width/2.13, height/1.5, 100, "Register", color(100, 100, 100));
   if (But1.visible) But1.show();
+  But5 = new Button(width/1.74, height/1.5, 100, "Login", color(100, 100, 100));
+  if (But5.visible) But5.show();
 }
