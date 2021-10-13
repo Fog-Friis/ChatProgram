@@ -5,6 +5,7 @@ public class TextBox {
 
   PVector position, size;
   public int TEXTSIZE = 48;
+  boolean isProtected;
 
   // COLORS
   public color Background = color(140, 140, 140);
@@ -24,13 +25,14 @@ public class TextBox {
     // CREATE OBJECT DEFAULT TEXTBOX
   }
 
-  TextBox(PVector position, PVector size) {
+  TextBox(PVector position, PVector size, boolean isProtected) {
     this.position = position;
     this.size = size;
+    this.isProtected = isProtected;
   }
 
   void display() {
-    
+
     // DRAWING THE BACKGROUND
     if (selected) {
       fill(BackgroundSelected);
@@ -44,7 +46,7 @@ public class TextBox {
     } else {
       noStroke();
     }
-    
+
     rectMode(CORNER);
 
     rect(position.x, position.y, size.x, size.y);
@@ -62,8 +64,12 @@ public class TextBox {
       if (KEYCODE == (int)BACKSPACE) {
         backSpace();
       } else if (KEYCODE == 32) {
-        // SPACE
-        addText(' ');
+        if (isProtected) {
+          addText('*');
+        } else {
+          // SPACE
+          addText(' ');
+        }
       } else if (KEYCODE == (int)ENTER) {
         return true;
       } else {
@@ -71,17 +77,22 @@ public class TextBox {
         boolean isKeyCapitalLetter = (KEY >= 'A' && KEY <= 'Z');
         boolean isKeySmallLetter = (KEY >= 'a' && KEY <= 'z');
         boolean isKeyNumber = (KEY >= '0' && KEY <= '9');
-        
-        
-        
-        if (isKeyCapitalLetter || isKeySmallLetter || isKeyNumber) {
-          addText(KEY); 
-         
-        
-        }
-        if (altgr == true && two == true){
-         addText('@');
 
+
+
+        if (isKeyCapitalLetter || isKeySmallLetter || isKeyNumber) {
+          if (isProtected) {
+            addText('*');
+          } else {
+            addText(KEY);
+          }
+        }
+        if (altgr == true && two == true) {
+          if (isProtected) {
+            addText('*');
+          } else {
+            addText('@');
+          }
         }
       }
     }
