@@ -2,7 +2,7 @@ GameStateManager gamestateManager;
 ArrayList<TextBox> textBoxes = new ArrayList<TextBox>();
 
 void setup() {
-  
+  //Abandon all hope, ye who enters
   setupRegisterScreen();
   gamestateManager = new GameStateManager();
 
