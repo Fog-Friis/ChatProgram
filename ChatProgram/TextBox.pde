@@ -33,7 +33,8 @@ public class TextBox {
   }
 
   void display() {
-
+    
+    if(visible){
     // DRAWING THE BACKGROUND
     if (selected) {
       fill(BackgroundSelected);
@@ -56,6 +57,9 @@ public class TextBox {
     fill(Foreground);
     textSize(TEXTSIZE);
     text(Text, position.x + (textWidth("a") / 2), position.y + TEXTSIZE);
+    } else {
+    }
+    
   }
 
   // IF THE KEYCODE IS ENTER RETURN 1
@@ -134,5 +138,10 @@ public class TextBox {
     } else {
       selected = false;
     }
+  }
+  
+  void clearText(){
+    TextLength = 0;
+    Text = "";
   }
 }

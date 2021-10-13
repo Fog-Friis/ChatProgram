@@ -15,14 +15,16 @@ void setupRegisterScreen() {
 
 void registerScreen() {
   
-  println("benis");
+  email.visible = false;
+  password.visible = false;
   
-  //email.visible = false;
-  //password.visible = false;
-  email.Text = "";
-  email.TextLength = 0;
-  password.Text = "";
-  password.TextLength = 0;
+  email.clearText();
+  password.clearText();
+  
+    userTB.visible = true;
+  emailTB.visible = true;
+  password1.visible = true;
+  password2.visible = true;
 
   textMode(CENTER);
 
@@ -40,6 +42,8 @@ void registerScreen() {
   emailTB.display();
   password1.display();
   password2.display();
+  println(emailTB.Text);
+    
     
     /*for (TextBox t : textBoxes){
       if (t.visible == true);

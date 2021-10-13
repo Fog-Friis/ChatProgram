@@ -13,14 +13,12 @@ void setupLoginScreen() {
   textBoxes.add(password);
 }
 
-void loginScreen() {
-  
-  println("bruh");
+void loginScreen() {  
 
-  //userTB.visible = false;
-  //emailTB.visible = false;
-  //password1.visible = false;
-  //password2.visible = false;
+  userTB.visible = false;
+  emailTB.visible = false;
+  password1.visible = false;
+  password2.visible = false;
 
   textMode(CENTER);
   text("Login", width/2, height/2);
@@ -31,6 +29,8 @@ void loginScreen() {
 
   email.display();
   password.display();
+  
+  println(email.Text);
   /*for (TextBox t : textBoxes) {
     if (t.visible == true) {
       t.display();
