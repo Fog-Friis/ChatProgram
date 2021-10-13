@@ -48,9 +48,12 @@ void registerScreen() {
   password1.display();
   password2.display();
   println(emailTB.Text);
-    
-      But2 = new Button(width/1.3, height/1.3, 100, "Login", color(100, 100, 100));
+  textMode(CENTER);
+  
+      But2 = new Button(width/1.74, height/1.3, 100, "Register", color(100, 100, 100));
       if (But2.visible) But2.show();
+      But4 = new Button(width/2.13, height/1.3, 100, "Back", color(100,100,100));
+      if (But4.visible) But4.show();
     /*for (TextBox t : textBoxes){
       if (t.visible == true);
       t.display();
