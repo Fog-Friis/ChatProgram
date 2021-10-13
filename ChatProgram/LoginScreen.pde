@@ -15,6 +15,7 @@ void setupLoginScreen() {
 
 void loginScreen() {  
 
+  chatText.visible = false;
   userTB.visible = false;
   emailTB.visible = false;
   password1.visible = false;
@@ -29,28 +30,10 @@ void loginScreen() {
       t.display();
     }
   }
-  
-  //userTB.clearText();
-  //emailTB.clearText();
-  //password1.clearText();
-  //password2.clearText();
-
   textMode(CENTER);
   text("Login", width/2, height/2);
 
 
   But1 = new Button(width/1.88, height/1.5, 100, "Login", color(100, 100, 100));
   if (But1.visible) But1.show();
-
-  /*for (TextBox t : textBoxes) {
-    if (t.visible == true) {
-      t.display();
-    }
-  }*/
-
-  //println(textBoxes);
 }
-/*
-void setuploginScreen() {
- 
- }*/

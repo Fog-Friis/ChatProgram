@@ -5,6 +5,7 @@ void setup() {
   //Abandon all hope, ye who enter here
   setupRegisterScreen();
   setupLoginScreen();
+  setupChat();
   gamestateManager = new GameStateManager();
 
   fullScreen();
@@ -57,11 +58,12 @@ void keyPressed() {
       if (t.keyWasTyped(key, (int)keyCode)) {
       }
    }
-   
+   if (key == ENTER) enter = true;
   
 }
 void keyReleased() {
 
       if (keyCode == 50){two = false;} 
     if (keyCode == 18){altgr = false;}
+    if (key == ENTER) enter = false;
 }
