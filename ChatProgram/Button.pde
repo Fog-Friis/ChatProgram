@@ -46,7 +46,7 @@ class Button {
     if  (mouseX>width/1.88-sizebutton/1.4 && mouseX<width/1.88+sizebutton-sizebutton/1.4 &&    
       mouseY>height/1.5-sizebutton/7 && mouseY<height/1.5+sizebutton/3-sizebutton/7) 
       {   //Ændre hvad height er divideret for fremtide knapper
-      gameState = 3;
+      gameState += 1;
       
     
      
