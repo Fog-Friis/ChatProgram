@@ -18,11 +18,11 @@ class GameStateManager {
       registerScreen();
       break;
 
-      case 2:
+      case 100:
       menuScreen();
       break;
 
-    case 3:
+    case 2:
       chatScreen();
       break;
 

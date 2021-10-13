@@ -41,4 +41,24 @@ void registerScreen() {
   text("Confirm Password:", width / 2 - width/1920*200, height / 1080 * 690);
 
   textMode(CORNER);
+<<<<<<< Updated upstream
+=======
+
+  userTB.display();
+  emailTB.display();
+  password1.display();
+  password2.display();
+  println(emailTB.Text);
+    
+      But2 = new Button(width/1.3, height/1.3, 100, "Login", color(100, 100, 100));
+      if (But2.visible) But2.show();
+    /*for (TextBox t : textBoxes){
+      if (t.visible == true);
+      t.display();
+    }*/
+    
+//  }
+
+  //println(textBoxes.size());
+>>>>>>> Stashed changes
 }

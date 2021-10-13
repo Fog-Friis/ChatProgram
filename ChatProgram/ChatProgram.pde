@@ -36,15 +36,13 @@ void mousePressed() {
     break;
 
   case 1:
+  But2.registerScreenB();
     break;
     
    case 2:
+   But3.chatScreenB();
      break;
 
-  case 3:
-    But3.chatScreenB();
-  default:
-    break;
     }
   
   
