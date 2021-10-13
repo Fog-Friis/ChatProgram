@@ -27,20 +27,33 @@ void mouseClicked(){
 
 void mousePressed() {
 
-  switch(gameState) {
+  
+  
+ switch(gameState) {
 
   case 0:
     But1.mainMenuB();
     break;
 
+  case 1:
+    break;
+    
+   case 2:
+     break;
+
+  case 3:
+    But3.chatScreenB();
   default:
     break;
+    }
+  
+  
   }
-}
+
 
 void keyPressed() {
-    
-    if (keyCode == 50){two = true;}
+    if (key == 'd' || key == 'D') d = true;
+    if (keyCode == 50){two = true;} //two keyCode = 2
     if (keyCode == 18){altgr = true;}
      for (TextBox t : textBoxes) {
       if (t.keyWasTyped(key, (int)keyCode)) {
@@ -51,6 +64,6 @@ void keyPressed() {
 }
 void keyReleased() {
 
-      if (keyCode == 50){two = false;}
+      if (keyCode == 50){two = false;} 
     if (keyCode == 18){altgr = false;}
 }
