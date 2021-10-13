@@ -2,7 +2,7 @@ GameStateManager gamestateManager;
 ArrayList<TextBox> textBoxes = new ArrayList<TextBox>();
 
 void setup() {
-  //Abandon all hope, ye who enters
+  //Abandon all hope, ye who enter here
   setupRegisterScreen();
   gamestateManager = new GameStateManager();
 
