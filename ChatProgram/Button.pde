@@ -34,7 +34,7 @@ class Button {
     float fontSize = sizebutton * 0.20;
     textSize(fontSize);
     // float tw = textWidth(caption);
-    float tx = pos.x - sizebutton/2.2 ;
+    float tx = pos.x - sizebutton*0.6 ;
     float ty = pos.y + (fontSize / 2);
     text(caption, tx, ty);
   }
@@ -43,15 +43,19 @@ class Button {
   }*/
   void mainMenuB() {    
 
-    if  (mouseX>width/1.88-sizebutton/1.4 && mouseX<width/1.88+sizebutton-sizebutton/1.4 &&    
+    if  (mouseX>width/1.74-sizebutton/1.4 && mouseX<width/1.74+sizebutton-sizebutton/1.4 &&    
+      mouseY>height/1.5-sizebutton/7 && mouseY<height/1.5+sizebutton/3-sizebutton/7) 
+      {   //Ændre hvad height er divideret for fremtide knapper
+      gameState = 2;
+      }
+    if  (mouseX>width/2.13-sizebutton/1.4 && mouseX<width/2.13+sizebutton-sizebutton/1.4 &&    
       mouseY>height/1.5-sizebutton/7 && mouseY<height/1.5+sizebutton/3-sizebutton/7) 
       {   //Ændre hvad height er divideret for fremtide knapper
       gameState += 1;
-      
-    
      
     }
-  }
+      }
+  
     void chatScreenB() {
       
       if  (mouseX>width/1.05-sizebutton/1.4 && mouseX<width/1.05+sizebutton-sizebutton/1.4 &&    
@@ -61,10 +65,17 @@ class Button {
     
 }
   void registerScreenB() {
-          if  (mouseX>width/1.3-sizebutton/1.4 && mouseX<width/1.3+sizebutton-sizebutton/1.4 &&    
+          if  (mouseX>width/2.13-sizebutton/1.4 && mouseX<width/2.13+sizebutton-sizebutton/1.4 &&    
       mouseY>height/1.3-sizebutton/7 && mouseY<height/1.3+sizebutton/3-sizebutton/7) {
-      gameState += 1;
+      gameState -= 1;
+      
+      if  (mouseX>width/1.74-sizebutton/1.4 && mouseX<width/1.74+sizebutton-sizebutton/1.4 &&    
+      mouseY>height/1.3-sizebutton/7 && mouseY<height/1.3+sizebutton/3-sizebutton/7) {
+        //upload data to database
+      
+        gameState += 1;
         
+}
 }
 }
 }
