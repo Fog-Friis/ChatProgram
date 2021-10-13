@@ -19,6 +19,21 @@ void loginScreen() {
   emailTB.visible = false;
   password1.visible = false;
   password2.visible = false;
+  email.visible = true;
+  password.visible = true;
+  
+  for (TextBox t : textBoxes){
+    if(t.visible == false){
+      t.clearText();
+    } else {
+      t.display();
+    }
+  }
+  
+  //userTB.clearText();
+  //emailTB.clearText();
+  //password1.clearText();
+  //password2.clearText();
 
   textMode(CENTER);
   text("Login", width/2, height/2);
@@ -27,10 +42,6 @@ void loginScreen() {
   But1 = new Button(width/1.88, height/1.5, 100, "Login", color(100, 100, 100));
   if (But1.visible) But1.show();
 
-  email.display();
-  password.display();
-  
-  println(email.Text);
   /*for (TextBox t : textBoxes) {
     if (t.visible == true) {
       t.display();

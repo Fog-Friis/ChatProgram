@@ -17,14 +17,18 @@ void registerScreen() {
   
   email.visible = false;
   password.visible = false;
-  
-  email.clearText();
-  password.clearText();
-  
-    userTB.visible = true;
+  userTB.visible = true;
   emailTB.visible = true;
   password1.visible = true;
   password2.visible = true;
+  
+  for (TextBox t : textBoxes){
+    if (t.visible == false){
+      t.clearText();
+    } else {
+      t.display();
+    }
+  }
 
   textMode(CENTER);
 
@@ -37,20 +41,4 @@ void registerScreen() {
   text("Confirm Password:", width / 2 - width/1920*200, height / 1080 * 690);
 
   textMode(CORNER);
-
-  userTB.display();
-  emailTB.display();
-  password1.display();
-  password2.display();
-  println(emailTB.Text);
-    
-    
-    /*for (TextBox t : textBoxes){
-      if (t.visible == true);
-      t.display();
-    }*/
-    
-//  }
-
-  //println(textBoxes.size());
 }
