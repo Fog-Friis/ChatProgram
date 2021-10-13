@@ -1,21 +1,45 @@
- int myColor = color(255);
- int c1,c2;
- float n,n1;
- 
-  void loginScreen() {
-    
-    textMode(CENTER);
-    text("Login", width/2, height/2);
+int myColor = color(255);
+int c1, c2;
+float n, n1;
+TextBox email;
+TextBox password;
 
-    
-    But1 = new Button(width/1.88, height/1.5, 100, "Login", color(100, 100, 100));
-    if (But1.visible) But1.show();
-  }
+
+void setupLoginScreen() {
+  email = new TextBox(new PVector(width/2 - width/1920*200, height / 1080 * 450), new PVector(width/1920*400, height / 1080 * 70), false, true);
+  password = new TextBox(new PVector(width/2 - width/1920*200, height / 1080 * 580), new PVector(width/1920*400, height / 1080 * 70), false, true);
+
+  textBoxes.add(email);
+  textBoxes.add(password);
+}
+
+void loginScreen() {
+  
+  println("bruh");
+
+  //userTB.visible = false;
+  //emailTB.visible = false;
+  //password1.visible = false;
+  //password2.visible = false;
+
+  textMode(CENTER);
+  text("Login", width/2, height/2);
+
+
+  But1 = new Button(width/1.88, height/1.5, 100, "Login", color(100, 100, 100));
+  if (But1.visible) But1.show();
+
+  email.display();
+  password.display();
+  /*for (TextBox t : textBoxes) {
+    if (t.visible == true) {
+      t.display();
+    }
+  }*/
+
+  //println(textBoxes);
+}
 /*
 void setuploginScreen() {
-  
-  }*/
-  
  
-
-  
+ }*/

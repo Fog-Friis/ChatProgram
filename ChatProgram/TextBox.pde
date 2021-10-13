@@ -5,7 +5,7 @@ public class TextBox {
 
   PVector position, size;
   public int TEXTSIZE = 48;
-  boolean isProtected;
+  public boolean isProtected, visible;
 
   // COLORS
   public color Background = color(140, 140, 140);
@@ -25,10 +25,11 @@ public class TextBox {
     // CREATE OBJECT DEFAULT TEXTBOX
   }
 
-  TextBox(PVector position, PVector size, boolean isProtected) {
+  TextBox(PVector position, PVector size, boolean isProtected, boolean visible) {
     this.position = position;
     this.size = size;
     this.isProtected = isProtected;
+    this.visible = visible;
   }
 
   void display() {

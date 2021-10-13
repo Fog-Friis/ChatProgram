@@ -4,6 +4,7 @@ ArrayList<TextBox> textBoxes = new ArrayList<TextBox>();
 void setup() {
   //Abandon all hope, ye who enter here
   setupRegisterScreen();
+  setupLoginScreen();
   gamestateManager = new GameStateManager();
 
   fullScreen();
@@ -16,11 +17,12 @@ void draw() {
   fill(0, 0, 0);
   gamestateManager.manage();
 
-  //for (TextBox t : textBoxes) t.display();
+  //for (TextBox t : textBoxes){ println(t.visible);}
 }
 
 void mouseClicked(){
     for (TextBox t : textBoxes) t.pressed(mouseX, mouseY);
+    
 }
 
 void mousePressed() {
