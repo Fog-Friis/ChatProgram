@@ -38,12 +38,26 @@ class Button {
     float ty = pos.y + (fontSize / 2);
     text(caption, tx, ty);
   }
+ /* void ButtonUpdate() {
+    
+  }*/
   void mainMenuB() {    
 
-    if  (mouseX>width/1.88-sizebutton/1.4 && mouseX<width/1.5+sizebutton-sizebutton/1.4 &&    
-      mouseY>height/1.88-sizebutton/7 && mouseY<(height/1.5+sizebutton/3)-sizebutton/7) {   //Ændre hvad height er divideret for fremtide knapper
-      gameState += 1;
-     // exit();
+    if  (mouseX>width/1.88-sizebutton/1.4 && mouseX<width/1.88+sizebutton-sizebutton/1.4 &&    
+      mouseY>height/1.5-sizebutton/7 && mouseY<height/1.5+sizebutton/3-sizebutton/7) 
+      {   //Ændre hvad height er divideret for fremtide knapper
+      gameState = 3;
+      
+    
+     
+    }
+  }
+    void chatScreenB() {
+      
+      if  (mouseX>width/1.05-sizebutton/1.4 && mouseX<width/1.05+sizebutton-sizebutton/1.4 &&    
+      mouseY>height/1.10-sizebutton/7 && mouseY<height/1.10+sizebutton/3-sizebutton/7) {
+      gameState = 0;
+        exit();
     }
     
 }
