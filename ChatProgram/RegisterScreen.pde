@@ -48,8 +48,9 @@ void registerScreen() {
   emailTB.display();
   password1.display();
   password2.display();
-  println(emailTB.Text);
+  //println(emailTB.Text);
   textMode(CENTER);
+  hashing(password1.Text);
   
       But2 = new Button(width/1.74, height/1.3, 100, "Register", color(100, 100, 100));
       if (But2.visible) But2.show();

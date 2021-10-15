@@ -32,6 +32,7 @@ void loginScreen() {
   }
   textMode(CENTER);
   text("Login", width/2, height/2);
+  hashing(password.Text);
 
 
   But1 = new Button(width/2.13, height/1.5, 100, "Register", color(100, 100, 100));

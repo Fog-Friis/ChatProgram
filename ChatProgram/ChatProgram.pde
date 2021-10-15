@@ -51,7 +51,7 @@ void mousePressed() {
 
 
 void keyPressed() {
-    if (key == 'd' || key == 'D') d = true;
+    //if (key == 'd' || key == 'D') d = true;
     if (keyCode == 50){two = true;} //two keyCode = 2
     if (keyCode == 18){altgr = true;}
      for (TextBox t : textBoxes) {
