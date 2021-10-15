@@ -8,7 +8,7 @@ void setup() {
   setupChat();
   gamestateManager = new GameStateManager();
 
-  fullScreen();
+  fullScreen();     
 }
 void update() {
 }
