@@ -2,6 +2,7 @@ TextBox chatText;
 boolean enter;
 ArrayList<ChatText> messages = new ArrayList<ChatText>();
 int i = 0;
+DatabaseText databaseText = new DatabaseText();
 
 void setupChat() {
   chatText = new TextBox(new PVector(100, height - height / 1080 * 100), new PVector(width-300, height / 1080 * 70), false, true);
@@ -17,6 +18,8 @@ void chatScreen() {
   password1.visible = false;
   password2.visible = false;
   chatText.visible = true;
+  
+  databaseText.getData();
 
   for (TextBox t : textBoxes) {
     if (t.visible == false) {
@@ -28,11 +31,9 @@ void chatScreen() {
 
   if (enter) {
     if (chatText.TextLength > 0) {
-      messages.add(new ChatText(chatText.Text, chatText.TEXTSIZE));
-      
-      for (ChatText t : messages){
-        t.pos += 5/4*chatText.TEXTSIZE;
-      }
+      //messages.add(new ChatText(chatText.Text, chatText.TEXTSIZE));
+      databaseText.sendData();
+      databaseText.getData();
       
       chatText.clearText();
       i += 1;
@@ -41,7 +42,7 @@ void chatScreen() {
 
 
   for (ChatText t : messages) {
-   text(usernameInput + ": " + t.message, 100, height-200-t.pos);
+   text(t.message, 100, height-200-t.pos);
    }
 
   textMode(CENTER);
