@@ -17,10 +17,11 @@ class DatabaseText {
   //String name, text;
   int i;
 
-  DatabaseText(/*String name, String text*/) {
+  DatabaseText(String name, String text*) {
     //this.name = name;
-    //this.text = text;
-  }
+    //this.text = text; 
+
+}
   
   void getData() {
     try {
