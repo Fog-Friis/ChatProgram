@@ -48,10 +48,10 @@ class Button {
       {   //Ændre hvad height er divideret for fremtide knapper
 
       //gameState = 2;
-      enter = true;
+      //enter = true;
 
       
-      //logincheck();
+      logincheck();
       //gameState = 2;
 
       }
