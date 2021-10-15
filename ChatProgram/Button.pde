@@ -51,7 +51,7 @@ class Button {
       enter = true;
 
       
-      logincheck();
+      //logincheck();
       //gameState = 2;
 
       }
