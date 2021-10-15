@@ -30,6 +30,7 @@ void mousePressed() {
   switch(gameState) {
 
   case 0:
+    
     But1.mainMenuB();
     break;
 

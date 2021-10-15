@@ -18,7 +18,7 @@ class GameStateManager {
       registerScreen();
       break;
 
-      case 100:
+    case 100:
       menuScreen();
       break;
 
