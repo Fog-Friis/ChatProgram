@@ -28,23 +28,22 @@ try{
       //println("test");
            
            //println(rs2.getString("password"));
-             test =((String)rs2.getString("password")); 
-             if (test == hashedPassword ){
-             gameState += 2;
-             }
-             else if (test != hashedPassword )
-             {
+             test = ((String)rs2.getString("password")); 
+             if (test.equals(hashedPassword) == true){
                
-               
-               System.out.print(hashedPassword+"=");
+             gameState += 2; }
+            else{
+            
+            System.out.print(hashedPassword+"=");
                System.out.print(test);
                loginError.errorType = 4;
              //System.out.print("password don't match");
-             }
-             else{
-             System.out.print("Shits fucked");
-             }
-          
+            
+            }
+               
+             
+             
+              
          }
           conn2.close();
                }
