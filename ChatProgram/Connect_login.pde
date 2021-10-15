@@ -53,24 +53,26 @@ void logincheck() {
 }
 
 void Register() {
-  hashing (password1.Text);
+hashing(password1.Text);
 if ((userTB.Text == "") || (emailTB.Text == "") || (password1.Text == "") || (password2.Text == ""))
 {} 
 else {
   try{
-    if(password1.Text.equals(password2.Text) == true){
+    if (password1.Text.equals(password2.Text) == true){
       hashedPassword = outputString;
       String QUERY3 = "INSERT INTO personer (ID, brugernavn, password, email) VALUES (MAX(ID)+1, "+userTB.Text+","+outputString+", "+emailTB.Text+");";
       Connection conn3 = DriverManager.getConnection(DB_URL, USER, PASS);
       java.sql.Statement stmt3 = conn3.createStatement();
       ResultSet rs3 = stmt3.executeQuery(QUERY3);
+      
+      while (rs3.next()) {
+        gameState = 2;
+      }
     }
     conn3.close();
   }
-  
   catch(Exception e){
     println(e);  
-        
-}
+  }       
 }
 }
