@@ -1,11 +1,12 @@
-java.sql.Statement stmt2;
-ResultSet rs2;
-Connection conn2;
+java.sql.Statement stmt2, stmt3;
+ResultSet rs2, rs3;
+Connection conn2, conn3;
 
 String DB_URL = "jdbc:mysql://localhost:3306/chat_program";
 String USER = "root";
 String PASS = "";
 String QUERY2 = "SELECT ID,brugernavn, password, email FROM personer";
+String QUERY3 = "INSERT ID,brugernavn, password, email FROM personer";
 void logincheck() {
 
 if ((usernameBox.Text == "") || (passwordBox.Text == ""))
@@ -53,10 +54,24 @@ if ((userTB.Text == "") || (emailTB.Text == "") || (password1.Text == "") || (pa
 else {
   if ((password1.Text) == (password2.Text)){}
   else{
-  
-  
-  }
+    
+try {
+    String QUERY3 = "SELECT MAX(ID) FROM personer;";
+      Connection conn3 = DriverManager.getConnection(DB_URL, USER, PASS);
+         java.sql.Statement stmt3 = conn3.createStatement();
+         ResultSet rs3 = stmt3.executeQuery(QUERY3);
+         while (rs3.next()) {
+          System.out.print(rs3.getInt("ID"));
+         }
 
+          conn2.close();
+               }
+      catch(Exception e)
+       {
 
+  println(e);
+       }
+
+}
 }
 }
