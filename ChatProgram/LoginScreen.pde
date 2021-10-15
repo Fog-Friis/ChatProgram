@@ -10,7 +10,7 @@ String usernameInput, passwordInput;
 
 void setupLoginScreen() {
   usernameBox = new TextBox(new PVector(width/2 - width/1920*200, height / 1080 * 450), new PVector(width/1920*400, height / 1080 * 70), false, true);
-  passwordBox = new TextBox(new PVector(width/2 - width/1920*200, height / 1080 * 580), new PVector(width/1920*400, height / 1080 * 70), false, true);
+  passwordBox = new TextBox(new PVector(width/2 - width/1920*200, height / 1080 * 580), new PVector(width/1920*400, height / 1080 * 70), true, true);
 
   textBoxes.add(usernameBox);
   textBoxes.add(passwordBox);

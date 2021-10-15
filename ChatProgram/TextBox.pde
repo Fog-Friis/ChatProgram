@@ -1,6 +1,8 @@
 boolean altgr = false;
 boolean two = false;
 boolean period = false;
+boolean AE, OE, AA;
+boolean shift;
 
 public class TextBox {
 
@@ -18,6 +20,7 @@ public class TextBox {
   public int BorderWeight = 1;
 
   public String Text = "";
+  public String protectedText = "";
   public int TextLength = 0;
 
   private boolean selected = false;
@@ -57,7 +60,13 @@ public class TextBox {
       // DRAWING THE TEXT ITSELF
       fill(Foreground);
       textSize(TEXTSIZE);
-      text(Text, position.x + (textWidth("a") / 2), position.y + TEXTSIZE);
+      
+      if (isProtected){
+      text(protectedText, position.x + (textWidth("a") / 2), position.y + TEXTSIZE);
+      } else {
+      text(Text, position.x + (textWidth("a") / 2), position.y + TEXTSIZE);  
+      }
+      
     } else {
     }
   }
@@ -70,12 +79,10 @@ public class TextBox {
         backSpace();
       } else if (KEYCODE == 32) {
         if (isProtected) {
-          addText('*');
-        } else {
-          // SPACE
-          addText(' ');
-        }
-      } else if (KEYCODE == (int)ENTER) {
+          addProtection('*');
+        } 
+        addText(' ');
+    } else if (KEYCODE == (int)ENTER) {
       return true;
     } else {
       // CHECK IF THE KEY IS A LETTER OR A NUMBER
@@ -87,28 +94,67 @@ public class TextBox {
 
       if (isKeyCapitalLetter || isKeySmallLetter || isKeyNumber) {
         if (isProtected) {
-          addText('*');
-        } else {
-          addText(KEY);
+          addProtection('*');
         }
+        addText(KEY);
       }
       if (altgr == true && two == true) {
         if (isProtected) {
           addText('*');
-        } else {
-          addText('@');
         }
+        addText('@');
       }
-      if (period == true){
-          if(isProtected){
-            addText('*');
-          } else {
-            addText('.');
-          }
+      if (period == true) {
+        if (isProtected) {
+          addText('*');
         }
+        addText('.');
+      }
+      /*if (AE == true) {
+       if (isProtected) {
+       addText('*');
+       } else {
+       addText('æ');
+       }
+       }
+       if (OE == true) {
+       if (isProtected) {
+       addText('*');
+       } else {
+       addText('ø');
+       }
+       }
+       if (AA == true) {
+       if (isProtected) {
+       addText('*');
+       } else {
+       addText('å');
+       }
+       }
+       
+       if (shift && AE == true) {
+       if (isProtected) {
+       addText('*');
+       } else {
+       addText('Æ');
+       }
+       }
+       if (shift && OE == true) {
+       if (isProtected) {
+       addText('*');
+       } else {
+       addText('Ø');
+       }
+       }
+       if (shift && AA == true) {
+       if (isProtected) {
+       addText('*');
+       } else {
+       addText('Å');
+       }
+       }*/
     }
   }
-
   return false;
 }
 
@@ -117,6 +163,11 @@ private void addText(char text) {
   if (textWidth(Text + text) < (size.x -size.x/5)) {
     Text += text;
     TextLength++;
+  }
+}
+private void addProtection(char text) {
+  if (textWidth(Text + text) < (size.x - size.x/5)) {
+    protectedText += text;
   }
 }
 
