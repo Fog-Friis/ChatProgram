@@ -10,8 +10,8 @@ void setupChat() {
 
 void chatScreen() {
 
-  email.visible = false;
-  password.visible = false;
+  usernameBox.visible = false;
+  passwordBox.visible = false;
   userTB.visible = false;
   emailTB.visible = false;
   password1.visible = false;
@@ -41,7 +41,7 @@ void chatScreen() {
 
 
   for (ChatText t : messages) {
-   text(t.message, 100, height-200-t.pos);
+   text(usernameInput + ": " + t.message, 100, height-200-t.pos);
    }
 
   textMode(CENTER);

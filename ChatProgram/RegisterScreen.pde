@@ -16,8 +16,8 @@ void setupRegisterScreen() {
 void registerScreen() {
   
   chatText.visible = false;
-  email.visible = false;
-  password.visible = false;
+  usernameBox.visible = false;
+  passwordBox.visible = false;
   userTB.visible = true;
   emailTB.visible = true;
   password1.visible = true;
