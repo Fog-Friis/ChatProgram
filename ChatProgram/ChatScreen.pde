@@ -19,8 +19,9 @@ void chatScreen() {
   password2.visible = false;
   chatText.visible = true;
   
+  if (frameCount%5==0){
   databaseText.getData();
-
+  }
   for (TextBox t : textBoxes) {
     if (t.visible == false) {
       t.clearText();
@@ -37,6 +38,7 @@ void chatScreen() {
       
       chatText.clearText();
       i += 1;
+      enter = false;
     }
   }
 

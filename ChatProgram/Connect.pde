@@ -1,9 +1,6 @@
 import java.sql.*;
 
-String DB_URL = "jdbc:mysql://localhost/beskeder";
-String USER = "root";
-String PASS = "";
-String QUERY = "SELECT Brugernavn, Besked FROM alle";
+String QUERY = "SELECT Brugernavn, Besked FROM beskeder";
 
 java.sql.Statement stmt;
 ResultSet rs;
@@ -51,7 +48,7 @@ class DatabaseText {
             
 
       if (chatText.TextLength != 0) {
-        stmt.executeUpdate("INSERT INTO `alle` (`Brugernavn`, `Besked`) VALUES ('" + usernameInput + "', '" + chatText.Text + "');");
+        stmt.executeUpdate("INSERT INTO `beskeder` (`Brugernavn`, `Besked`) VALUES ('" + usernameInput + "', '" + chatText.Text + "');");
       }
       
 

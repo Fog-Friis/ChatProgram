@@ -2,36 +2,38 @@ java.sql.Statement stmt2;
 ResultSet rs2;
 Connection conn2;
 
-String DB_URL2 = "jdbc:mysql://localhost/chat_program";
+String DB_URL = "jdbc:mysql://localhost:3306/chat_program";
+String USER = "root";
+String PASS = "";
 String QUERY2 = "SELECT ID,brugernavn, password, email FROM personer";
-String QUERY3 = "SELECT ID,brugernavn, password, email FROM personer";
 void logincheck() {
+
 if ((usernameBox.Text == "") || (passwordBox.Text == ""))
 {} 
 else {
 
-try{
-         String QUERY2 = "SELECT ID,brugernavn, password, email FROM personer WHERE brugernavn = "+usernameBox.Text+";";
-         String QUERY3 = "SELECT password FROM personer WHERE "+usernameBox.Text+" = brugernavn;";
-         String QUERY4 = "SELECT password FROM personer WHERE brugernavn + "+usernameBox.Text+";";
-         Connection conn2 = DriverManager.getConnection(DB_URL2, USER, PASS);
+try{     
+         String QUERY2 = "SELECT password FROM personer WHERE brugernavn = '"+usernameBox.Text+"';";
+         Connection conn2 = DriverManager.getConnection(DB_URL, USER, PASS);
          java.sql.Statement stmt2 = conn2.createStatement();
-         ResultSet rs2 = stmt2.executeQuery(QUERY4);
+         ResultSet rs2 = stmt2.executeQuery(QUERY2);
 
 //SELECT password FROM brugernavn == "+usernameBox.Text+":"
-        while (rs2.next()) {
+
+          while (rs2.next()) {
       //println("test");
-            // Retrieve by column name
-           // System.out.print("ID: " + rs.getInt("id"));
-           println(rs2.getString("password"));
-           /*
-             if((passwordBox.Text) == (rs2.getString("password"))){
-             gameState += 1;
+           
+           //println(rs2.getString("password"));
+           
+             if (passwordBox.Text == rs2.getString("password")){
+             gameState += 2;
              }
              else {
-             System.out.print("password don't match");
+               System.out.print(passwordBox.Text);
+               System.out.print(rs2.getString("password"));
+               loginError.errorType = 4;
+             //System.out.print("password don't match");
              }
-             */
           
          }
           conn2.close();
@@ -41,9 +43,10 @@ try{
       println(e);
       
       }
+}
      
 }
-}
+
 void Register() {
 if ((userTB.Text == "") || (emailTB.Text == "") || (password1.Text == "") || (password2.Text == ""))
 {} 
