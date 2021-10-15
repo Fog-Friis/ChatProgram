@@ -4,7 +4,7 @@ Connection conn2, conn3;
 String test;
 String hashedPassword = "din mor";
 
-String DB_URL = "jdbc:mysql://localhost:3306/database";
+String DB_URL = "jdbc:mysql://localhost:3306/chat_program";
 String USER = "root";
 String PASS = "";
 String QUERY2 = "SELECT ID,brugernavn, password, email FROM personer";
@@ -53,22 +53,24 @@ void logincheck() {
 }
 
 void Register() {
+  hashing (password1.Text);
 if ((userTB.Text == "") || (emailTB.Text == "") || (password1.Text == "") || (password2.Text == ""))
 {} 
 else {
   try{
-    if ((password1.Text) == (password2.Text)){
+    if(password1.Text.equals(password2.Text) == true){
       hashedPassword = outputString;
-      String QUERY2 = "INSERT INTO personer (ID, brugernavn, password, email) VALUES (MAX(ID)+1, "+userTB.Text+", "+hashedPassword+", "+emailTB.Text+");";
-      Connection conn2 = DriverManager.getConnection(DB_URL, USER, PASS);
-      java.sql.Statement stmt2 = conn2.createStatement();
-      ResultSet rs2 = stmt2.executeQuery(QUERY2);
-    
+      String QUERY3 = "INSERT INTO personer (ID, brugernavn, password, email) VALUES (MAX(ID)+1, "+userTB.Text+","+outputString+", "+emailTB.Text+");";
+      Connection conn3 = DriverManager.getConnection(DB_URL, USER, PASS);
+      java.sql.Statement stmt3 = conn3.createStatement();
+      ResultSet rs3 = stmt3.executeQuery(QUERY3);
     }
-    conn2.close();
+    conn3.close();
   }
+  
   catch(Exception e){
     println(e);  
-  }       
+        
+}
 }
 }

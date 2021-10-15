@@ -55,6 +55,8 @@ class Button {
       //gameState = 2;
 
       }
+      else 
+      
     if  (mouseX>width/2.13-sizebutton/1.4 && mouseX<width/2.13+sizebutton-sizebutton/1.4 &&    
       mouseY>height/1.5-sizebutton/7 && mouseY<height/1.5+sizebutton/3-sizebutton/7) 
       {   //Ændre hvad height er divideret for fremtide knapper
@@ -80,7 +82,8 @@ class Button {
       mouseY>height/1.3-sizebutton/7 && mouseY<height/1.3+sizebutton/3-sizebutton/7) {
         //upload data to database
        
-        gameState += 1;
+       
+       gameState += 1;
         
 }
 }
