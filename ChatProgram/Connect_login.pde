@@ -1,7 +1,7 @@
 java.sql.Statement stmt2, stmt3;
 ResultSet rs2, rs3;
 Connection conn2, conn3;
-
+String test;
 String hashedPassword = "din mor";
 
 String DB_URL = "jdbc:mysql://localhost:3306/chat_program";
@@ -16,6 +16,7 @@ if ((usernameBox.Text == "") || (passwordBox.Text == ""))
 else {
 
 try{     
+         hashedPassword = outputString;
          String QUERY2 = "SELECT password FROM personer WHERE brugernavn = '"+usernameBox.Text+"';";
          Connection conn2 = DriverManager.getConnection(DB_URL, USER, PASS);
          java.sql.Statement stmt2 = conn2.createStatement();
@@ -27,16 +28,16 @@ try{
       //println("test");
            
            //println(rs2.getString("password"));
-           
-             if (rs2.getString("password") == passwordInput ){
+             test =((String)rs2.getString("password")); 
+             if (test == hashedPassword ){
              gameState += 2;
              }
-             else if (rs2.getString("password") != passwordInput )
+             else if (test != hashedPassword )
              {
                
-               hashedPassword = outputString;
-               System.out.print(passwordInput);
-               System.out.print(rs2.getString("password"));
+               
+               System.out.print(hashedPassword+"=");
+               System.out.print(test);
                loginError.errorType = 4;
              //System.out.print("password don't match");
              }

@@ -50,7 +50,7 @@ class Button {
       //gameState = 2;
       //enter = true;
       passwordInput = passwordBox.Text;
-      
+      hashing (passwordInput);
       logincheck();
       //gameState = 2;
 
