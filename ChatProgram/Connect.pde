@@ -11,7 +11,7 @@ String PASS = "";
 String QUERY = "SELECT ID,brugernavn, password, email FROM personer";
 
 void logincheck() {
-if ((email.Text == "") || (password.Text == ""))
+if ((usernameBox.Text == "") || (passwordBox.Text == ""))
 {} 
 else {
 
@@ -19,14 +19,14 @@ try{
  
          Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
          java.sql.Statement stmt = conn.createStatement();
-         ResultSet rs = stmt.executeQuery("SELECT password FROM email ="+email.Text+":");
+         ResultSet rs = stmt.executeQuery("SELECT password FROM brugernavn ="+usernameBox.Text+":");
 
 while (rs.next()) {
   //println("test");
             // Retrieve by column name
            // System.out.print("ID: " + rs.getInt("id"));
            println(rs.getString("password"));
-             if((password.Text) == (rs.getString("password"))){
+             if((passwordBox.Text) == (rs.getString("password"))){
              gameState += 1;
              }
              

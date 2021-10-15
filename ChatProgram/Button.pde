@@ -46,14 +46,14 @@ class Button {
     if  (mouseX>width/1.74-sizebutton/1.4 && mouseX<width/1.74+sizebutton-sizebutton/1.4 &&    
       mouseY>height/1.5-sizebutton/7 && mouseY<height/1.5+sizebutton/3-sizebutton/7) 
       {   //Ændre hvad height er divideret for fremtide knapper
-<<<<<<< Updated upstream
+
       //gameState = 2;
       enter = true;
-=======
+
       
       logincheck();
       //gameState = 2;
->>>>>>> Stashed changes
+
       }
     if  (mouseX>width/2.13-sizebutton/1.4 && mouseX<width/2.13+sizebutton-sizebutton/1.4 &&    
       mouseY>height/1.5-sizebutton/7 && mouseY<height/1.5+sizebutton/3-sizebutton/7) 
