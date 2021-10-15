@@ -13,11 +13,11 @@ void hashing(String Text){
   StringBuffer hashedValueBuffer = new StringBuffer();
   for (byte b : byteList)hashedValueBuffer.append(hex(b)); 
   
-  println("Den orindelige tekst: "+ inputTekst);
-  println("SHA-256 værdien af teksten: " +hashedValueBuffer.toString());
+  //println("Den orindelige tekst: "+ inputTekst);
+  //println("SHA-256 værdien af teksten: " +hashedValueBuffer.toString());
   
 }
 catch (Exception e) {
-  System.out.println("Exception: "+e);
+  //System.out.println("Exception: "+e);
 }
 }

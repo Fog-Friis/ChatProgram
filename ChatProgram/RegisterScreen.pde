@@ -1,4 +1,5 @@
 TextBox userTB, emailTB, password1, password2;
+RegisterError registerError = new RegisterError();
 
 void setupRegisterScreen() {
 
@@ -23,6 +24,8 @@ void registerScreen() {
   password1.visible = true;
   password2.visible = true;
   
+  registerError.update();
+  
   for (TextBox t : textBoxes){
     if (t.visible == false){
       t.clearText();
@@ -30,6 +33,8 @@ void registerScreen() {
       t.display();
     }
   }
+  
+  registerError.display();
 
   textMode(CENTER);
 
@@ -42,7 +47,6 @@ void registerScreen() {
   text("Confirm Password:", width / 2 - width/1920*200, height / 1080 * 690);
 
   textMode(CORNER);
-
 
   userTB.display();
   emailTB.display();
@@ -64,4 +68,69 @@ void registerScreen() {
 //  }
 
   //println(textBoxes.size());
+}
+
+class RegisterError{
+  
+  int errorType;
+  
+  void update(){
+    if (enter){
+      if(userTB.TextLength == 0){
+        errorType = 1;
+      } else if(emailTB.TextLength == 0){
+        errorType = 2;
+      } else if(password1.TextLength == 0){
+        errorType = 3;
+      } else if(password2.TextLength == 0){
+        errorType = 4;
+      }else if(password1.Text != password2.Text){
+        errorType = 5;
+      } else {
+        enter = false;
+        gameState = 2;
+        errorType = 0;
+      }
+      
+    }
+  }
+  
+  void display(){
+    
+    textMode(CENTER);
+    fill(255, 0, 0);
+    
+    switch(errorType){
+      
+      case 0:
+      break;
+      
+      case 1:
+      text("Error, please type username.", width / 4, 9*height / 10);
+      break;
+      
+      case 2:
+      text("Error, please type email.", width / 4, 9*height / 10);
+      break;
+      
+      case 3:
+      text("Error, please type password.", width / 4, 9*height / 10);
+      break;
+      
+      case 4:
+      text("Error, please confirm password.", width / 4, 9*height / 10);
+      break;
+      
+      case 5:
+      text("Error, passwords don't match", width / 4, 9*height / 10);
+      break;
+            
+      default:
+      errorType = 0;      
+    }
+    
+    textMode(CORNER);
+    fill(0, 0, 0);
+  }
+  
 }

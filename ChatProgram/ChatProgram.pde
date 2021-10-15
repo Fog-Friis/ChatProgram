@@ -16,9 +16,7 @@ void update() {
 void draw() {
   background(255);
   fill(0, 0, 0);
-  gamestateManager.manage();
-
-  //for (TextBox t : textBoxes){ println(t.visible);}
+  gamestateManager.manage();  
 }
 
 void mouseClicked(){
@@ -58,12 +56,15 @@ void keyPressed() {
       if (t.keyWasTyped(key, (int)keyCode)) {
       }
    }
+   if (key == '.') period = true;
    if (key == ENTER) enter = true;
+   
   
 }
 void keyReleased() {
 
       if (keyCode == 50){two = false;} 
     if (keyCode == 18){altgr = false;}
+    if (keyCode == '.') period = false;
     if (key == ENTER) enter = false;
 }

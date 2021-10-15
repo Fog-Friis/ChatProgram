@@ -1,5 +1,6 @@
 boolean altgr = false;
 boolean two = false;
+boolean period = false;
 
 public class TextBox {
 
@@ -33,33 +34,32 @@ public class TextBox {
   }
 
   void display() {
-    
-    if(visible){
-    // DRAWING THE BACKGROUND
-    if (selected) {
-      fill(BackgroundSelected);
+
+    if (visible) {
+      // DRAWING THE BACKGROUND
+      if (selected) {
+        fill(BackgroundSelected);
+      } else {
+        fill(Background);
+      }
+
+      if (BorderEnable) {
+        strokeWeight(BorderWeight);
+        stroke(Border);
+      } else {
+        noStroke();
+      }
+
+      rectMode(CORNER);
+
+      rect(position.x, position.y, size.x, size.y);
+
+      // DRAWING THE TEXT ITSELF
+      fill(Foreground);
+      textSize(TEXTSIZE);
+      text(Text, position.x + (textWidth("a") / 2), position.y + TEXTSIZE);
     } else {
-      fill(Background);
     }
-
-    if (BorderEnable) {
-      strokeWeight(BorderWeight);
-      stroke(Border);
-    } else {
-      noStroke();
-    }
-
-    rectMode(CORNER);
-
-    rect(position.x, position.y, size.x, size.y);
-
-    // DRAWING THE TEXT ITSELF
-    fill(Foreground);
-    textSize(TEXTSIZE);
-    text(Text, position.x + (textWidth("a") / 2), position.y + TEXTSIZE);
-    } else {
-    }
-    
   }
 
   // IF THE KEYCODE IS ENTER RETURN 1
@@ -76,72 +76,79 @@ public class TextBox {
           addText(' ');
         }
       } else if (KEYCODE == (int)ENTER) {
-        return true;
-      } else {
-        // CHECK IF THE KEY IS A LETTER OR A NUMBER
-        boolean isKeyCapitalLetter = (KEY >= 'A' && KEY <= 'Z');
-        boolean isKeySmallLetter = (KEY >= 'a' && KEY <= 'z');
-        boolean isKeyNumber = (KEY >= '0' && KEY <= '9');
-
-
-
-        if (isKeyCapitalLetter || isKeySmallLetter || isKeyNumber) {
-          if (isProtected) {
-            addText('*');
-          } else {
-            addText(KEY);
-          }
-        }
-        if (altgr == true && two == true) {
-          if (isProtected) {
-            addText('*');
-          } else {
-            addText('@');
-          }
-        }
-      }
-    }
-
-    return false;
-  }
-
-  private void addText(char text) {
-    // IF THE TEXT WIDHT IS IN BOUNDARIES OF THE TEXTBOX
-    if (textWidth(Text + text) < (size.x -size.x/5)) {
-      Text += text;
-      TextLength++;
-    }
-  }
-
-  private void backSpace() {
-    if (TextLength - 1 >= 0) {
-      Text = Text.substring(0, TextLength - 1);
-      TextLength--;
-    }
-  }
-
-  // FUNCTION FOR TESTING IS THE POINT
-  // OVER THE TEXTBOX
-  private boolean overBox(int x, int y) {
-    if (x >= position.x && x <= position.x + size.x) {
-      if (y >= position.y && y <= position.y + size.y) {
-        return true;
-      }
-    }
-
-    return false;
-  }
-
-  void pressed(int x, int y) {
-    if (overBox(x, y)) {
-      selected = true;
+      return true;
     } else {
-      selected = false;
+      // CHECK IF THE KEY IS A LETTER OR A NUMBER
+      boolean isKeyCapitalLetter = (KEY >= 'A' && KEY <= 'Z');
+      boolean isKeySmallLetter = (KEY >= 'a' && KEY <= 'z');
+      boolean isKeyNumber = (KEY >= '0' && KEY <= '9');
+
+
+
+      if (isKeyCapitalLetter || isKeySmallLetter || isKeyNumber) {
+        if (isProtected) {
+          addText('*');
+        } else {
+          addText(KEY);
+        }
+      }
+      if (altgr == true && two == true) {
+        if (isProtected) {
+          addText('*');
+        } else {
+          addText('@');
+        }
+      }
+      if (period == true){
+          if(isProtected){
+            addText('*');
+          } else {
+            addText('.');
+          }
+        }
     }
   }
-  
-  void clearText(){
-    TextLength = 0;
-    Text = "";
+
+  return false;
+}
+
+private void addText(char text) {
+  // IF THE TEXT WIDHT IS IN BOUNDARIES OF THE TEXTBOX
+  if (textWidth(Text + text) < (size.x -size.x/5)) {
+    Text += text;
+    TextLength++;
   }
+}
+
+private void backSpace() {
+  if (TextLength - 1 >= 0) {
+    Text = Text.substring(0, TextLength - 1);
+    TextLength--;
+  }
+}
+
+// FUNCTION FOR TESTING IS THE POINT
+// OVER THE TEXTBOX
+private boolean overBox(int x, int y) {
+  if (x >= position.x && x <= position.x + size.x) {
+    if (y >= position.y && y <= position.y + size.y) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+void pressed(int x, int y) {
+  if (overBox(x, y)) {
+    selected = true;
+  } else {
+    selected = false;
+  }
+}
+
+void clearText() {
+  TextLength = 0;
+  Text = "";
+}
 }
