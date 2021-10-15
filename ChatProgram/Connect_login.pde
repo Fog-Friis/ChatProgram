@@ -2,6 +2,8 @@ java.sql.Statement stmt2, stmt3;
 ResultSet rs2, rs3;
 Connection conn2, conn3;
 
+String hashedPassword = "din mor";
+
 String DB_URL = "jdbc:mysql://localhost:3306/chat_program";
 String USER = "root";
 String PASS = "";
@@ -26,14 +28,20 @@ try{
            
            //println(rs2.getString("password"));
            
-             if (passwordBox.Text == rs2.getString("password")){
+             if (rs2.getString("password") == passwordInput ){
              gameState += 2;
              }
-             else {
-               System.out.print(passwordBox.Text);
+             else if (rs2.getString("password") != passwordInput )
+             {
+               
+               hashedPassword = outputString;
+               System.out.print(passwordInput);
                System.out.print(rs2.getString("password"));
                loginError.errorType = 4;
              //System.out.print("password don't match");
+             }
+             else{
+             System.out.print("Shits fucked");
              }
           
          }

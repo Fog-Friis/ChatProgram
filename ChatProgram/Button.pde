@@ -49,7 +49,7 @@ class Button {
 
       //gameState = 2;
       //enter = true;
-
+      passwordInput = passwordBox.Text;
       
       logincheck();
       //gameState = 2;
