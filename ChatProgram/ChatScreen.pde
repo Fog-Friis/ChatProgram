@@ -18,6 +18,7 @@ void chatScreen() {
   password1.visible = false;
   password2.visible = false;
   chatText.visible = true;
+  IPBox.visible = false;
   
   if (frameCount%10==0){
   databaseText.getData();

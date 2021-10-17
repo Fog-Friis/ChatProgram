@@ -23,6 +23,7 @@ void registerScreen() {
   emailTB.visible = true;
   password1.visible = true;
   password2.visible = true;
+  IPBox.visible = false;
   
  // registerError.update();
   

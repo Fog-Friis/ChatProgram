@@ -12,7 +12,7 @@ String PASS = "test";
 void logincheck() {
   
       try{     
-      String DB_URL = "jdbc:mysql://"+IP+":3306+/chat_program";
+      String DB_URL = "jdbc:mysql://"+IP+":3306/chat_program";
       hashedPassword = outputString;
       usernameInput = usernameBox.Text;
       String QUERY2 = "SELECT password FROM personer WHERE brugernavn = '"+usernameBox.Text+"';";
