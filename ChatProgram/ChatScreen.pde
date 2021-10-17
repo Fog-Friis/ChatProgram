@@ -19,7 +19,7 @@ void chatScreen() {
   password2.visible = false;
   chatText.visible = true;
   
-  if (frameCount%5==0){
+  if (frameCount%10==0){
   databaseText.getData();
   }
   for (TextBox t : textBoxes) {
@@ -51,7 +51,7 @@ void chatScreen() {
   text("Chat", width/2, height/5);
   textMode(CORNER);
 
-  But3 = new Button(width/1.05, height/1.1, 100, "close", color(100, 100, 100));
+  But3 = new Button(width/1.04, height/25, 100, "close", color(100, 100, 100));
   if (But3.visible) But3.show();
 }
 

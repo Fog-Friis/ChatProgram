@@ -26,7 +26,7 @@ void loginScreen() {
   usernameBox.visible = true;
   passwordBox.visible = true;
 
-  loginError.update();
+ // loginError.update();
 
   for (TextBox t : textBoxes) {
     if (t.visible == false) {
@@ -55,8 +55,9 @@ void loginScreen() {
 class LoginError {
 
   int errorType = 0;
-
+ /*
   void update() {
+   
     if (enter) {
       if (usernameBox.TextLength == 0 && passwordBox.TextLength == 0) {
         errorType = 3;
@@ -66,14 +67,15 @@ class LoginError {
         errorType = 1;
       } else {
         errorType = 0;
-        usernameInput = usernameBox.Text;
+        usernameInput = usernameBox.Text;;
         passwordInput = passwordBox.Text;
-        gameState += 2;
+        hashing (passwordInput);
+        logincheck();
         enter = false;
       }
     }
   }
-
+*/
   void display() {
 
     textMode(CENTER);
@@ -98,7 +100,11 @@ class LoginError {
     case 4:
       text("wrong password", width / 4, height / 3);
       break;
-    default:
+    case 5:
+      text("wrong username", width / 4, height / 3);
+      break;
+      
+   default:
       errorType = 0;
     }
 

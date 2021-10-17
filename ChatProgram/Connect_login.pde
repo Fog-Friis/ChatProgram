@@ -6,17 +6,12 @@ int maxID2 = -1;
 String test;
 String hashedPassword = "testpassword";
 
-String DB_URL = "jdbc:mysql://192.168.0.241:3306/chat_program";
-String USER = "test";
-String PASS = "test";
-String QUERY2 = "SELECT ID,brugernavn, password, email FROM personer";
-String QUERY3 = "INSERT ID,brugernavn, password, email FROM personer";
+String DB_URL = "jdbc:mysql://localhost:3306/chat_program";
+String USER = "root";
+String PASS = "";
 void logincheck() {
-
-  if ((usernameBox.Text == "") || (passwordBox.Text == ""))
-  {} 
-  else {
-    try{     
+  
+      try{     
       hashedPassword = outputString;
       usernameInput = usernameBox.Text;
       String QUERY2 = "SELECT password FROM personer WHERE brugernavn = '"+usernameBox.Text+"';";
@@ -27,32 +22,29 @@ void logincheck() {
 //SELECT password FROM brugernavn == "+usernameBox.Text+":"
 
       while (rs2.next()) {
-      //println("test");
-           
-           //println(rs2.getString("password"));
-        test = ((String)rs2.getString("password")); 
+          test = rs2.getString("password"); 
         if (test.equals(hashedPassword) == true){
                
           gameState = 2; }
         else{
             
           System.out.print(hashedPassword+"=");
-          //System.out.print(test);
+          System.out.print(test);
           loginError.errorType = 4;
-             //System.out.print("password don't match");
-            
+             System.out.print("password don't match");
         }
-               
-             
-             
               
       }
       conn2.close();
+      if (loginError.errorType != 4)
+      {
+    loginError.errorType = 5;
+      }
     }
     catch(Exception e){
       println(e);  
     }
-  }
+   
 }
 
 void Register() {

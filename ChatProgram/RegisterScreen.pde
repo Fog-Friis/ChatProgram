@@ -24,7 +24,7 @@ void registerScreen() {
   password1.visible = true;
   password2.visible = true;
   
-  registerError.update();
+ // registerError.update();
   
   for (TextBox t : textBoxes){
     if (t.visible == false){
@@ -73,8 +73,9 @@ void registerScreen() {
 class RegisterError{
   
   int errorType;
-  
+  /*
   void update(){
+    
     if (enter){
       if(userTB.TextLength == 0){
         errorType = 1;
@@ -94,7 +95,7 @@ class RegisterError{
       
     }
   }
-  
+  */
   void display(){
     
     textMode(CENTER);

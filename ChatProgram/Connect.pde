@@ -48,7 +48,7 @@ class DatabaseText {
             
 
       if (chatText.TextLength != 0) {
-        stmt.executeUpdate("INSERT INTO `beskeder` (`IDbesked ,Brugernavn`, `Besked`) VALUES ('1" + usernameInput + "', '" + chatText.Text + "');");
+        stmt.executeUpdate("INSERT INTO `beskeder` (`Brugernavn`, `Besked`) VALUES ('" + usernameInput + "', '" + chatText.Text + "');");
       }
       
 
