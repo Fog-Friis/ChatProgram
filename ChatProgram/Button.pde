@@ -61,8 +61,8 @@ class Button {
   
     void chatScreenB() {
       
-      if  (mouseX>width/1.05-sizebutton/1.4 && mouseX<width/1.05+sizebutton-sizebutton/1.4 &&    
-      mouseY>height/1.10-sizebutton/7 && mouseY<height/1.10+sizebutton/3-sizebutton/7) {
+      if  (mouseX>width/1.04-sizebutton/1.4 && mouseX<width/1.04+sizebutton-sizebutton/1.4 &&    
+      mouseY>height/25-sizebutton/7 && mouseY<height/25+sizebutton/3-sizebutton/7) {
         exit();
     }
     
