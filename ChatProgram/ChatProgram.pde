@@ -76,11 +76,6 @@ void keyReleased() {
   if (keyCode == 18) {
     altgr = false;
   }
-  /*
-  if (keyCode == 38) {
-   Register();
- }
-  */
 
   
   //if (keyCode == 59) AE = false;

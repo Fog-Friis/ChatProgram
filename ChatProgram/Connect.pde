@@ -17,7 +17,7 @@ class DatabaseText {
   
   void getData() {
     try {
-      Class.forName("com.mysql.jdbc.Driver");
+   //   Class.forName("com.mysql.jdbc.Driver");
 
       Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
       java.sql.Statement stmt = conn.createStatement();
@@ -48,7 +48,7 @@ class DatabaseText {
             
 
       if (chatText.TextLength != 0) {
-        stmt.executeUpdate("INSERT INTO `beskeder` (`Brugernavn`, `Besked`) VALUES ('" + usernameInput + "', '" + chatText.Text + "');");
+        stmt.executeUpdate("INSERT INTO `beskeder` (`IDbesked ,Brugernavn`, `Besked`) VALUES ('1" + usernameInput + "', '" + chatText.Text + "');");
       }
       
 

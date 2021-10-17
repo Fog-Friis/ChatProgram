@@ -6,9 +6,9 @@ int maxID2 = -1;
 String test;
 String hashedPassword = "testpassword";
 
-String DB_URL = "jdbc:mysql://localhost:3306/chat_program";
-String USER = "root";
-String PASS = "";
+String DB_URL = "jdbc:mysql://192.168.0.241:3306/chat_program";
+String USER = "test";
+String PASS = "test";
 String QUERY2 = "SELECT ID,brugernavn, password, email FROM personer";
 String QUERY3 = "INSERT ID,brugernavn, password, email FROM personer";
 void logincheck() {
