@@ -1,4 +1,4 @@
-Button But1, But2, But3, But4, But5, But6, But7, But8, But9;
+Button But1, But2, But3, But4, But5, But6;
 boolean toggleColor;
 float sizebutton = 200; 
 
@@ -51,11 +51,20 @@ class Button {
       }
       else 
       
+    if  (mouseX>width/1.25-sizebutton/1.4 && mouseX<width/1.25+sizebutton-sizebutton/1.4 &&    
+      mouseY>height/1.05-sizebutton/7 && mouseY<height/1.05+sizebutton/3-sizebutton/7) 
+      {   //Ændre hvad height er divideret for fremtide knapper
+      IP = IPBox.Text;
+     
+    }
+    else
+    {
     if  (mouseX>width/2.13-sizebutton/1.4 && mouseX<width/2.13+sizebutton-sizebutton/1.4 &&    
       mouseY>height/1.5-sizebutton/7 && mouseY<height/1.5+sizebutton/3-sizebutton/7) 
       {   //Ændre hvad height er divideret for fremtide knapper
       gameState += 1;
      
+    }
     }
       }
   

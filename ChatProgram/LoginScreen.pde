@@ -3,6 +3,7 @@ int c1, c2;
 float n, n1;
 TextBox usernameBox;
 TextBox passwordBox;
+TextBox IPBox;
 LoginError loginError = new LoginError();
 
 String usernameInput, passwordInput;
@@ -11,7 +12,9 @@ String usernameInput, passwordInput;
 void setupLoginScreen() {
   usernameBox = new TextBox(new PVector(width/2 - width/1920*200, height / 1080 * 450), new PVector(width/1920*400, height / 1080 * 70), false, true);
   passwordBox = new TextBox(new PVector(width/2 - width/1920*200, height / 1080 * 580), new PVector(width/1920*400, height / 1080 * 70), false, true);
+  IPBox = new TextBox(new PVector(width/2 - width/1920*200, height / 1080 * 1000), new PVector(width/1920*600, height / 1080 * 70), false, true);
   
+  textBoxes.add(IPBox);
   textBoxes.add(usernameBox);
   textBoxes.add(passwordBox);
 }
@@ -25,7 +28,8 @@ void loginScreen() {
   password2.visible = false;
   usernameBox.visible = true;
   passwordBox.visible = true;
-
+  IPBox.visible = true;
+  
  // loginError.update();
 
   for (TextBox t : textBoxes) {
@@ -50,6 +54,8 @@ void loginScreen() {
   if (But1.visible) But1.show();
   But5 = new Button(width/1.74, height/1.5, 100, "Login", color(100, 100, 100));
   if (But5.visible) But5.show();
+  But6 = new Button(width/1.25, height/1.05, 100, "Set IP", color(100, 100, 100));
+  if (But6.visible) But6.show();
 }
 
 class LoginError {

@@ -5,13 +5,14 @@ int maxID = 0;
 int maxID2 = -1;
 String test;
 String hashedPassword = "testpassword";
-
+String IP = "localhost";
 String DB_URL = "jdbc:mysql://localhost:3306/chat_program";
 String USER = "root";
 String PASS = "";
 void logincheck() {
   
       try{     
+      String DB_URL = "jdbc:mysql://"+IP+":3306+/chat_program";
       hashedPassword = outputString;
       usernameInput = usernameBox.Text;
       String QUERY2 = "SELECT password FROM personer WHERE brugernavn = '"+usernameBox.Text+"';";
