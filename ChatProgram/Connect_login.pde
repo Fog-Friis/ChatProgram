@@ -7,8 +7,8 @@ String test;
 String hashedPassword = "testpassword";
 String IP = "localhost";
 String DB_URL = "jdbc:mysql://localhost:3306/chat_program";
-String USER = "root";
-String PASS = "";
+String USER = "test";
+String PASS = "test";
 void logincheck() {
   
       try{     
