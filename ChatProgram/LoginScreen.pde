@@ -28,7 +28,7 @@ void loginScreen() {
   password2.visible = false;
   usernameBox.visible = true;
   passwordBox.visible = true;
-  IPBox.visible = true;
+  IPBox.visible = false;
   
  // loginError.update();
 
@@ -54,8 +54,10 @@ void loginScreen() {
   if (But1.visible) But1.show();
   But5 = new Button(width/1.74, height/1.5, 100, "Login", color(100, 100, 100));
   if (But5.visible) But5.show();
+  /*
   But6 = new Button(width/1.25, height/1.05, 100, "Set IP", color(100, 100, 100));
   if (But6.visible) But6.show();
+  */
 }
 
 class LoginError {
