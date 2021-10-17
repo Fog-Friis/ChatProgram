@@ -48,10 +48,10 @@ class Button {
       {   //Ændre hvad height er divideret for fremtide knapper
 
       //gameState = 2;
-      //enter = true;
-      passwordInput = passwordBox.Text;
+     //enter = true;
+     passwordInput = passwordBox.Text;
       hashing (passwordInput);
-      logincheck();
+     logincheck();
       //gameState = 2;
 
       }
@@ -77,17 +77,15 @@ class Button {
           if  (mouseX>width/2.13-sizebutton/1.4 && mouseX<width/2.13+sizebutton-sizebutton/1.4 &&    
       mouseY>height/1.3-sizebutton/7 && mouseY<height/1.3+sizebutton/3-sizebutton/7) {
       gameState -= 1;
+      }
+      else
       
       if  (mouseX>width/1.74-sizebutton/1.4 && mouseX<width/1.74+sizebutton-sizebutton/1.4 &&    
       mouseY>height/1.3-sizebutton/7 && mouseY<height/1.3+sizebutton/3-sizebutton/7) {
-        //upload data to database
       passwordInput = password1.Text;
       hashing (passwordInput);
       Register();
-       
-       gameState += 1;
         
-}
 }
 }
 }

@@ -124,7 +124,10 @@ class RegisterError{
       case 5:
       text("Error, passwords don't match", width / 4, 9*height / 10);
       break;
-            
+      
+      case 6:
+      text("Error, username or email in use", width / 4, 9*height / 10);
+      break;    
       default:
       errorType = 0;      
     }
